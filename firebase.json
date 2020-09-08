@@ -1,0 +1,80 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint"
+    ],
+    "source": "functions"
+  },
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [ {
+      "source": "/signup",
+      "destination": "/index.html"
+     }, {
+      "source": "/login",
+      "destination": "/index.html"
+     }, {
+      "source": "/form",
+      "destination": "/index.html"
+     }, {
+      "source": "/tool",
+      "destination": "/index.html"
+     },  {
+      "source": "/volunteer-tool",
+      "destination": "/index.html"
+     },
+      {
+        "source": "/volunteer-tool/chat",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/donate",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/about",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/team",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/advisors",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/contact",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/volunteer-tool/user-profile",
+        "destination": "/index.html"
+      },
+    {
+      "source": "/meeting",
+      "destination": "/index.html"
+    }, {
+      "source": "/admin",
+      "destination": "/index.html"
+     }, {
+       "source": "/volunteerform",
+       "destination": "/index.html"
+      }, {
+      "source": "/",
+      "destination": "/index.html"
+     }, {
+      "source": "/app/**",
+      "function": "app"
+     }]
+  }
+}
